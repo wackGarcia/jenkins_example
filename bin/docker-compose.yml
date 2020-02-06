@@ -16,6 +16,8 @@ services:
   service-go:
     image: golang:1.13-buster
     restart: always
+    depends_on: 
+     - db-postgres
     container_name: jenkins_service_example
     ports:
         - "8881:8881"
