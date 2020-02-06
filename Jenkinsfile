@@ -30,11 +30,16 @@ pipeline {
                 ENV='dev'
             }
             steps {
-                dir('bin'){
+                dir('bin/'){
                     echo 'Deploying ...'
-                    sh 'DIRPATH=${pwd()} docker-compose up --force-recreate -d'
+                    sh 'docker-compose up --force-recreate -d'
                 }
             }
+        }
+    }
+    post {
+        always {
+            cleanWs()
         }
     }
 }
