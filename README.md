@@ -1,2 +1,2 @@
 # jenkins_example
-Example jenkins pipelne 
+Example jenkins pipeline 

@@ -1,0 +1,9 @@
+version: '3.3'
+
+services:
+  app:
+    image: golang:1.13-buster
+    volumes:
+      - .:/go/src/services/jenkins_example
+    working_dir: /go/src/services/jenkins_example
+    command: go build -o bin/jenkins-${ENV:-prod} .
